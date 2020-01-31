@@ -7,7 +7,6 @@ import (
 	"math/rand"
 	"os"
 	"strings"
-	"time"
 )
 
 /*
@@ -103,10 +102,10 @@ func (d deck) toString() string {
 
 func (d deck) shuffle() deck {
 
-	source := rand.NewSource(time.Now().UnixNano()) // geerate a eal rand number
+	source := rand.NewSource()
 	r := rand.New(source)
 	for i := range d {
-		newPos := r.Intn(len(d) - 1) // randiom number generator
+		newPos := rand.Intn(len(d) - 1) // randiom number generator
 		d[i], d[newPos] = d[newPos], d[i]
 	}
 

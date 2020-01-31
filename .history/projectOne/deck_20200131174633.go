@@ -102,7 +102,7 @@ func (d deck) toString() string {
 }
 
 func (d deck) shuffle() deck {
-
+	num := time.un
 	source := rand.NewSource(time.Now().UnixNano()) // geerate a eal rand number
 	r := rand.New(source)
 	for i := range d {
